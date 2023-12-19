@@ -6,32 +6,38 @@
 # you can control the output width with the DISPLAY_WIDTH var which as a default value set to
 # set(DISPLAY_WIDTH 80)
 
+# ~~~
 # For instance
-
-# message_title(" Example ") message_info(" Some information") message_setting("DISPLAY_WIDTH")
+#
+# message_title(" Example ")
+# message_info(" Some information")
+# message_setting("DISPLAY_WIDTH")
 # message_end()
-
+#
 # Outputs
-
+#
 # ┌────────────────────────────────┤│ Example │├──────────────────────────────────┐
-# │  Some information                                                             │ │ DISPLAY_WIDTH
-# 80                                             │
+# │  Some information                                                             │
+# │ DISPLAY_WIDTH                  80                                             │
 # └───────────────────────────────────────────────────────────────────────────────┘
-
+#
 # Or outputs
-
+#
 # ┌──┤│ Example │├────┐
-# │  Some information │ │ DISPLAY_WIDTH    ⏎│ │                20 │
+# │  Some information │
+# │ DISPLAY_WIDTH    ⏎│
+# │                20 │
 # └───────────────────┘
-
+#
 # Depending of the DISPLAY_WIDTH value
+# ~~~
 
 # set default value
 if(NOT DEFINED DISPLAY_WIDTH)
     set(DISPLAY_WIDTH 80)
 endif()
 
-# messageFormat used internally
+# message_format used internally
 function(message_format TEXT PRE PRE_LEN POST POST_LEN FILL)
     set(TEXT_LEN 0)
     if(TEXT)
