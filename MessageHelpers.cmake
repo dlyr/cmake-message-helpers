@@ -125,9 +125,11 @@ endfunction()
 macro(message_prefix_push PREFIX)
     list(APPEND CMAKE_MESSAGE_INDENT "[${PREFIX}] ")
 endmacro()
+
 macro(message_prefix_pop)
     list(REMOVE_AT CMAKE_MESSAGE_INDENT -1)
 endmacro()
+
 macro(message_prefix_clear)
     set(CMAKE_MESSAGE_INDENT "")
 endmacro()

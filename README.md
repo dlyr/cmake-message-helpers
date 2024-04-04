@@ -15,7 +15,14 @@ git submodule add https://github.com/dlyr/cmake-message-helpers.git cmake/cmake-
 And in your `CMakeLists.txt`
 
 ```{.cmake}
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake-message-helpers/message-helpers.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/cmake-message-helpers/MessageHelpers.cmake)
+```
+
+or 
+
+```{.cmake}
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/cmake-message-helpers/ )
+include(MessageHelpers)
 ```
 
 ## Usage

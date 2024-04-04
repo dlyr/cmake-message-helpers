@@ -14,7 +14,12 @@ set(TEST_COMPONENTS "")
 set(TEST_COMPONENTS ${TEST_COMPONENTS} "Test1")
 set(TEST_COMPONENTS ${TEST_COMPONENTS} "Test1")
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/message-helpers.cmake)
+
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR})
+include(MessageHelpers)
+
+# or
+# include(${CMAKE_SOURCE_DIR}/MessageHelpers.cmake)
 
 message( "normal message")
 message(STATUS "status message")
